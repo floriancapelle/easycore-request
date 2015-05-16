@@ -18,7 +18,12 @@
         factory(root.easyCore, root._);
     }
 }(this, function( easyCore, _ ) {
-    easyCore.registerExtension('request', function( core, settings ) {
+    easyCore.register('request', 'extension', function( core, settings, moreParams ) {
+        /** @type {object} - sandbox mediator, shorthand */
+        var sandboxMediator = moreParams.sandboxMediator;
+        /** @type {object} - core settings, shorthand */
+        var coreSettings = moreParams.coreSettings;
+
         /**
          * Default configuration
          * @namespace
